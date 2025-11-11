@@ -1,0 +1,208 @@
+/* ================================
+   Records Page - View Transactions
+   Consistent theme with other pages
+   ================================ */
+
+:root {
+  --bg-color: #000000;
+  --text-color-primary: #ECEEF4;
+  --text-color-secondary: #b3b8d7;
+  --text-color-muted: #7B81AC;
+  --accent-color-start: #635BFF;
+  --accent-color-end: #32C9FA;
+  --income-color: #3ECF8E;
+  --expense-color: #FF5C5C;
+  --card-bg: #1a1c2e;
+  --shadow-dark: rgba(0, 0, 0, 0.6);
+  --font-family-base: 'Poppins', sans-serif;
+  --border-radius-base: 12px;
+  --transition-duration: 0.25s;
+}
+
+body.view-page-body {
+  background: var(--bg-color);
+  color: var(--text-color-primary);
+  font-family: var(--font-family-base);
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar */
+.navbar {
+  background: #11131f;
+  padding: 0.8rem 2rem;
+  box-shadow: 0 4px 12px var(--shadow-dark);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.app-nav-logo {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--accent-color-end);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+}
+
+.nav-links a {
+  color: var(--text-color-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--transition-duration) ease;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--accent-color-end);
+}
+
+.nav-logout {
+  color: #f96c6c !important;
+  font-weight: 600;
+}
+
+/* Container */
+.view-container {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.view-title {
+  text-align: center;
+  font-size: 1.6rem;
+  color: var(--accent-color-end);
+  margin-bottom: 1.5rem;
+}
+
+/* Filter buttons */
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.filter-btn {
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  border: none;
+  background: linear-gradient(90deg, var(--accent-color-start), var(--accent-color-end));
+  color: white;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: transform var(--transition-duration) ease, box-shadow 0.2s ease;
+}
+
+.filter-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(50, 201, 250, 0.25);
+}
+
+/* Records card */
+.records-card {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: var(--border-radius-base);
+  box-shadow: 0 6px 20px var(--shadow-dark);
+  overflow-x: auto;
+}
+
+/* Table */
+.records-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--text-color-primary);
+  font-size: 0.95rem;
+}
+
+.records-table th,
+.records-table td {
+  padding: 0.9rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #2a2c3e;
+}
+
+.records-table th {
+  background: #11131f;
+  color: var(--text-color-secondary);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.records-table tr:hover td {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Badges */
+.badge {
+  padding: 0.3rem 0.7rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  display: inline-block;
+}
+
+.income-badge {
+  background: rgba(62, 207, 142, 0.2);
+  color: var(--income-color);
+}
+
+.expense-badge {
+  background: rgba(255, 92, 92, 0.2);
+  color: var(--expense-color);
+}
+
+/* Delete link */
+.delete-link {
+  color: var(--expense-color);
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.delete-link:hover {
+  opacity: 0.7;
+}
+
+/* No records */
+.no-records {
+  text-align: center;
+  color: var(--text-color-muted);
+  padding: 2rem 0;
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 720px) {
+  .records-table th,
+  .records-table td {
+    padding: 0.6rem 0.7rem;
+    font-size: 0.85rem;
+  }
+  .filter-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}

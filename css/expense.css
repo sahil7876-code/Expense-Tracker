@@ -1,0 +1,160 @@
+/* ================================
+   Expense Page - Add Expense/Income
+   Consistent theme with home.css
+   ================================ */
+
+:root {
+  --bg-color: #000000;
+  --text-color-primary: #ECEEF4;
+  --text-color-secondary: #b3b8d7;
+  --text-color-muted: #7B81AC;
+  --accent-color-start: #635BFF;
+  --accent-color-end: #32C9FA;
+  --card-bg: #1a1c2e;
+  --shadow-light: rgba(50, 201, 250, 0.25);
+  --shadow-dark: rgba(0, 0, 0, 0.6);
+  --font-family-base: 'Poppins', sans-serif;
+  --border-radius-base: 14px;
+  --transition-duration: 0.3s;
+}
+
+body.dark-theme {
+  background: var(--bg-color);
+  color: var(--text-color-primary);
+  font-family: var(--font-family-base);
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar (same as home) */
+.navbar {
+  background: #11131f;
+  padding: 0.8rem 2rem;
+  box-shadow: 0 4px 12px var(--shadow-dark);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.app-nav-logo {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--accent-color-end);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+}
+
+.nav-links a {
+  color: var(--text-color-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--transition-duration) ease;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--accent-color-end);
+}
+
+.nav-logout {
+  color: #f96c6c !important;
+  font-weight: 600;
+}
+
+/* Main form container */
+.dark-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+}
+
+.dark-panel {
+  background: var(--card-bg);
+  border-radius: var(--border-radius-base);
+  padding: 2rem 2.5rem;
+  box-shadow: 0 6px 20px var(--shadow-dark);
+  width: 100%;
+  max-width: 500px;
+}
+
+.dark-panel-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--accent-color-end);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Form styling */
+.dark-form .form-group {
+  margin-bottom: 1.3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.dark-form label {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  color: var(--text-color-secondary);
+}
+
+.dark-form input,
+.dark-form select {
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  border: none;
+  background: #11131f;
+  color: var(--text-color-primary);
+  font-size: 0.95rem;
+  transition: border var(--transition-duration) ease, outline var(--transition-duration) ease;
+}
+
+.dark-form input:focus,
+.dark-form select:focus {
+  outline: 2px solid var(--accent-color-end);
+}
+
+/* Button */
+.dark-btn {
+  background: linear-gradient(90deg, var(--accent-color-start), var(--accent-color-end));
+  color: #fff;
+  padding: 0.9rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform var(--transition-duration) ease, box-shadow 0.2s ease;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.dark-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--shadow-light);
+}
+
+/* Responsive */
+@media (max-width: 720px) {
+  .dark-panel {
+    padding: 1.5rem;
+  }
+}

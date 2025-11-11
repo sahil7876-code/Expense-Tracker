@@ -1,0 +1,169 @@
+/*
+ * =========================================================
+ * Expense Tracker: Privacy Policy Page Styles
+ *
+ * This file contains styles for the privacy policy page,
+ * consistent with the dark theme and modern design.
+ * =========================================================
+*/
+
+:root {
+  --bg-color: #000000;
+  --text-color-primary: #ECEEF4;
+  --text-color-secondary: #b3b8d7;
+  --text-color-muted: #7B81AC;
+  --accent-color-start: #635BFF;
+  --accent-color-end: #32C9FA;
+  --card-bg-gradient-start: #191C34;
+  --card-bg-gradient-end: #1D2042;
+  --card-border-color: #69308b;
+  --shadow-light: rgba(50, 201, 250, 0.25);
+  --shadow-dark: rgba(0, 0, 0, 0.5);
+  --font-family-base: 'Poppins', sans-serif;
+  --border-radius-base: 14px;
+  --transition-duration: 0.25s;
+  --font-weight-bold: 700;
+  --font-weight-semibold: 600;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.2rem;
+  --font-size-xl: 1.33rem;
+  --income-color: #3ECF8E;
+  --expense-color: #FF5C5C;
+}
+
+body.static-page-body {
+    background: var(--bg-color);
+    color: var(--text-color-primary);
+    font-family: var(--font-family-base);
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+}
+
+/* --- Simple Header --- */
+.static-header {
+  background: #11131f;
+  padding: 0.8rem 2rem;
+  box-shadow: 0 4px 12px var(--shadow-dark);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  text-align: center;
+}
+.static-header-brand {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--accent-color-end);
+  text-decoration: none;
+}
+
+/* --- Main Content Container & Sections --- */
+.static-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+.content-section {
+  background: var(--card-bg-gradient-start);
+  border-radius: var(--border-radius-base);
+  padding: 2rem;
+  box-shadow: 0 2px 20px var(--shadow-dark);
+}
+.page-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--accent-color-start);
+  margin-bottom: 0.5rem;
+}
+.page-intro {
+  text-align: center;
+  font-size: 1rem;
+  color: var(--text-color-secondary);
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+}
+
+/* --- Privacy Policy Page --- */
+.policy-sections {
+    display: grid;
+    gap: 1.5rem;
+}
+.policy-item {
+  background: #141625;
+  padding: 1.5rem;
+  border-radius: var(--border-radius-base);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+  border-top: 2px solid var(--accent-color-start);
+}
+.policy-title {
+  font-size: 1.2rem;
+  color: var(--text-color-primary);
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+.policy-item p {
+  font-size: 0.95rem;
+  color: var(--text-color-secondary);
+  line-height: 1.6;
+}
+
+/* --- Footer --- */
+footer.footer {
+  background: #17172B;
+  padding: 2.4rem 1rem 3.7rem;
+  color: #ADB8CE;
+  font-size: 1rem;
+  border-top: 1px solid #1B1C2D;
+  text-align: center;
+}
+
+.footer-container {
+  max-width: 900px;
+  margin: 0 auto 1rem auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2.3rem;
+}
+
+.footer-about,
+.footer-links {
+  flex: 1 1 272px;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+.footer-about h3,
+.footer-links h4 {
+  color: var(--accent-color-start);
+  margin-bottom: 1rem;
+  font-weight: var(--font-weight-bold);
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links ul li a {
+  color: #ADB8CE;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 0.26rem;
+  opacity: 0.95;
+  transition: opacity 0.18s ease, color 0.2s ease;
+}
+
+.footer-links ul li a:hover {
+  opacity: 1;
+  color: var(--accent-color-end);
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  margin-top: 2rem;
+  font-size: 0.88rem;
+  color: var(--text-color-muted);
+}

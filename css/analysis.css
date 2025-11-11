@@ -1,0 +1,187 @@
+/* ================================
+   Analysis Page - Financial Charts
+   ================================ */
+
+:root {
+  --bg-color: #000000;
+  --text-color-primary: #ECEEF4;
+  --text-color-secondary: #b3b8d7;
+  --text-color-muted: #7B81AC;
+  --accent-color-start: #635BFF;
+  --accent-color-end: #32C9FA;
+  --expense-color: #FF5C5C;
+  --card-bg: #1a1c2e;
+  --shadow-dark: rgba(0, 0, 0, 0.6);
+  --shadow-light: rgba(50, 201, 250, 0.25);
+  --font-family-base: 'Poppins', sans-serif;
+  --border-radius-base: 14px;
+  --transition-duration: 0.25s;
+}
+
+body.light-theme {
+  background: var(--bg-color);
+  color: var(--text-color-primary);
+  font-family: var(--font-family-base);
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar (reuse same style as other pages) */
+.navbar {
+  background: #11131f;
+  padding: 0.8rem 2rem;
+  box-shadow: 0 4px 12px var(--shadow-dark);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.app-nav-logo {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--accent-color-end);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+}
+
+.nav-links a {
+  color: var(--text-color-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--transition-duration) ease;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--accent-color-end);
+}
+
+.nav-logout {
+  color: var(--expense-color) !important;
+  font-weight: 600;
+}
+
+/* Analysis layout */
+.analysis-container {
+  padding: 3rem 1rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.analysis-title {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 0.3rem;
+  color: var(--accent-color-end);
+}
+
+.analysis-subtitle {
+  text-align: center;
+  font-size: 1rem;
+  color: var(--text-color-secondary);
+  margin-bottom: 2rem;
+}
+
+/* Cards */
+.card {
+  background: var(--card-bg);
+  border-radius: var(--border-radius-base);
+  padding: 1.5rem 2rem;
+  box-shadow: 0 6px 20px var(--shadow-dark);
+  margin-bottom: 2rem;
+}
+
+.card h3,
+.card h2 {
+  margin-top: 0;
+  color: var(--accent-color-end);
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+/* Charts */
+.chart-card canvas {
+  width: 100% !important;
+  height: auto !important;
+}
+
+/* Goals Progress */
+.goals-progress-card {
+  background: #141625;
+}
+
+.goal-item {
+  margin-bottom: 1.5rem;
+}
+
+.goal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.goal-title {
+  font-weight: 600;
+  color: var(--text-color-primary);
+}
+
+.goal-amount {
+  font-size: 0.95rem;
+  color: var(--text-color-secondary);
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background: #11131f;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-color-start), var(--accent-color-end));
+  transition: width 0.4s ease;
+}
+
+.progress-text {
+  display: block;
+  margin-top: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--text-color-muted);
+}
+
+.no-goals-message {
+  text-align: center;
+  color: var(--text-color-muted);
+  font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .card {
+    padding: 1.2rem 1rem;
+  }
+  .analysis-title {
+    font-size: 1.6rem;
+  }
+}
