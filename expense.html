@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Expense - Expense Tracker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/expense.css">
+    
+</head>
+
+<body class="dark-theme">
+
+    <div class="navbar">
+        <div class="nav-container">
+            <a href="home.php" class="app-nav-logo">
+                <i class="fas fa-wallet"></i>
+                    <span>ExpenseTracker</span>
+            </a>
+        <div class="nav-links">
+            <a href="home.php" class="nav-links active">
+                <i class="fas fa-home"></i>
+                    Dashboard
+            </a>
+            <a href="expense.html" class="nav-links">
+                <i class="fas fa-receipt"></i>
+                    Expenses
+            </a>
+            <a href="goal.php" class="nav-links">
+                <i class="fas fa-bullseye"></i>
+                    Goals
+                    </a>
+                    <a href="view.php" class="nav-links">
+                        <i class="fas fa-eye"></i>
+                        Records
+                    </a>
+                    <a href="budget.php" class="nav-links">
+                        <i class="fas fa-chart-line"></i>
+                        Budget
+                    </a>
+                    <a href="analysis.php" class="nav-links active">
+                        <i class="fas fa-chart-pie"></i>
+                        Analysis
+                    </a>
+                    <a href="index.html" class="nav-logout">
+                        <i class="fas fa-sign-out-alt"></i>
+                        Logout
+                    </a>
+                </div>
+            </div>
+          </div>
+
+
+    <div class="dark-container">
+        <div class="dark-panel">
+            <h2 class="dark-panel-title">Add Expense / Income</h2>
+            <form action="expense.php" method="post" class="dark-form">
+                <div class="form-group">
+                    <label for="type">Type</label>
+                    <select id="type" name="type" required>
+                        <option value="">Select Type</option>
+                        <option value="expense">Expense</option>
+                        <option value="income">Income</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <select id="c_id" name="c_id" required>
+                        <option value="">-- Select Category --</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="amount">Amount</label>
+                    <input type="number" id="amount" name="amount" placeholder="e.g., 500" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="date">Date</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+
+                <button type="submit" class="dark-btn">Add Record</button>
+            </form>
+        </div>
+    </div>
+    
+    <script>
+        // Categories data
+        const categories = {
+            income: [
+                { id: 1, name: "Salary" },
+                { id: 2, name: "Business" },
+                { id: 3, name: "Freelance" },
+                { id: 4, name: "Interest" },
+                { id: 5, name: "Other Income" },
+                { id: 6, name: "Savings" },
+                { id: 7, name: "Pocket Money" }
+            ],
+            expense: [
+                { id: 9, name: "Food" },
+                { id: 10, name: "Transport" },
+                { id: 11, name: "Rent" },
+                { id: 12, name: "Shopping" },
+                { id: 13, name: "Bills" },
+                { id: 14, name: "Entertainment" },
+                { id: 15, name: "Healthcare" },
+                { id: 16, name: "Education" },
+                { id: 17, name: "Other Expense" }
+            ]
+        };
+
+        const typeSelect = document.getElementById('type');
+        const catSelect = document.getElementById('c_id');
+
+        typeSelect.addEventListener('change', () => {
+            const type = typeSelect.value;
+            catSelect.innerHTML = '<option value="">-- Select Category --</option>';
+            if (categories[type]) {
+                categories[type].forEach(cat => {
+                    const option = document.createElement('option');
+                    option.value = cat.id;
+                    option.textContent = cat.name;
+                    catSelect.appendChild(option);
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
